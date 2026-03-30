@@ -1,4 +1,14 @@
 import requests
+import csv
+
+lang_map = {}
+
+with open("languages.csv", newline="", encoding="utf-8") as f:
+    reader = csv.DictReader(f)
+    for row in reader:
+        srtnm = row["alpha3-b"].strip()
+        lngnm = row["English"].split(";")[0]
+        lang_map[srtnm] = lngnm
 
 #Session data to give to OpenLibrary to get the data.
 SESSION = requests.Session()
@@ -46,6 +56,10 @@ for d in databook.get("docs"):
         lang = d["language"]
         break  
 
+def expand_language(srtnm):
+    return lang_map.get(srtnm, srtnm)
+
+
 #Sets reyear to None so it can be called and edited in the check.
 reyear = None
 #Sets reyear to be whatever the first mention of "first_publish_year" is in the API for the book.
@@ -55,9 +69,9 @@ for d in databook.get("docs"):
         break 
 
 #Joins the different languages into a list
-lang = ", ".join(lang)
+lang = ", ".join(expand_language(c) for c in lang)
 
 #Prints what your author's top book is and what year it released.
 print(name + "'s top selling book is " + top + ", which released in " + str(reyear) + "!")
 #Prints what languages the top book was released in.
-print(top + ", was released in: " + str(lang) + ".")
+print(top + ", was released in: " + lang + ".")
