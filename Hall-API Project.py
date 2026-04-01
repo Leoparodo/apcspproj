@@ -26,7 +26,7 @@ def exp_lang(srtnm):
     return lang_map.get(srtnm, srtnm)
 
 yes = ["yes", "yeah", "yep", "yup", "yah", "yea", "indeed", "absolutely", "definitely", "certainly", "sure", "surely", "of course", "naturally", "obviously", "exactly", "right", "correct", "true", "agreed", "ok", "okay", "okey-dokey", "alright", "all right", "fine", "very well", "so be it", "affirmative", "affirmed", "positive", "aye", "aye aye", "uh-huh", "mm-hmm", "mhm", "you bet", "you betcha", "bet", "for sure", "by all means", "without a doubt", "no problem", "why not", "fair enough", "certain", "undoubtedly", "gladly", "happily", "I agree", "I do", "I will", "that works", "works for me", "I'm in", "count me in", "go ahead", "make sense", "sounds good", "sounds right", "totally", "exactly right", "100%", "one hundred percent", "roger", "roger that", "copy that", "word", "aye indeed", "by all means yes"]
-maybe = ["maybe", "perchance", "idk"]
+maybe = ["maybe", "perhaps", "possibly", "could be", "might be", "may or may not", "hard to say", "not sure", "uncertain", "we'll see", "time will tell", "it depends", "up in the air", "if it works out", "to be determined", "surprise me", "you decide", "your choice", "dealer's choice", "whatever you think", "anything works", "I'm open", "I'm flexible", "go with whatever", "pick for me", "your call", "do what you want", "choose at random", "anything you recommend", "free choice", "let fate decide", "perchance", "idk"]
 
 cont = True
 
